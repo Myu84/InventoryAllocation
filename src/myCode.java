@@ -37,14 +37,14 @@ class myCode
 						i = i+1;
 					}
 
-					if(inventory.get(nearest.get(i)) != 0 && productNum > inventory.get(nearest.get(i))){
+					if(inventory.get(nearest.get(i)) != 0 && productNum < inventory.get(nearest.get(i))){
 						innerMap.put(nearest.get(i), inventory.get(nearest.get(i)));
 						productNum = productNum - inventory.get(nearest.get(i));
 						i = i + 1;
 					}
 
-					// if nearest location has enough inventory
-					if(inventory.get(nearest.get(i)) != 0 && productNum < inventory.get(nearest.get(i))){
+					// if nearest location don't have enough inventory
+					if(inventory.get(nearest.get(i)) != 0 && productNum > inventory.get(nearest.get(i))){
 						innerMap.put(nearest.get(i), productNum);
 						outerMap.put(productId, innerMap);
 						productNum = productNum - inventory.get(nearest.get(i));
